@@ -1,0 +1,14 @@
+{
+  "name": "webtasky",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vite": "^8.0.8"
+  },
+  "scripts": {
+    "dev": "bun run vite dev",
+    "dev:open": "bun run vite dev --open"
+  }
+}
