@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    <h1 class="welcome">Welcome to Tasky</h1>
+    <header>
+      <h1>Welcome to Tasky</h1>
+    </header>
+    <main>
+      <div class="controls">
+        <button id="add-task">Add New Task</button>
+        <button id="remove-task">Remove Task</button>
+      </div>
+      <ul class="task-list">
+        <li class="task-card">
+          <h3>Main: Get milk</h3>
+          <p>description: Get milk at EuroSpar</p>
+          <p>Time and Date: <span class="due-date">day.month.year</span></p>
+        </li>
+      </ul>
+    </main>
     <script src="/main.js" defer></script>
   </body>
 </html>

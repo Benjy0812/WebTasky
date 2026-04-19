@@ -1,0 +1,47 @@
+body {
+  background-image: url("/assets/images/arc.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*backdrop-filter: blur(50px);*/
+}
+main, 
+header {
+  align-items: center;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  color: white;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(110, 110, 110, 0.4);
+
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.task-list {
+  width: 15%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border: 1px solid rgba(110, 110, 110, 0.4);
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
