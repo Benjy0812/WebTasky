@@ -1,0 +1,31 @@
+{
+  "sort-order": [
+    "position",
+    "top",
+    "right",
+    "bottom",
+    "left",
+    "z-index",
+
+    "display",
+    "width",
+    "height",
+    "margin",
+    "padding",
+
+    "border-radius",
+    "-webkit-border-radius",
+    "-moz-border-radius",
+    "-ms-border-radius",
+    "-o-border-radius",
+
+    "font-family",
+    "font-size",
+    "color",
+
+    "background",
+    "border",
+
+    "overflow"
+  ]
+}
