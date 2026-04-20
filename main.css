@@ -2,7 +2,6 @@ body {
   background-image: url("/assets/images/arc.png");
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(50px);
 }
 main, 
 header {
