@@ -4,18 +4,18 @@
   font-style: normal;
 
   src: url("/assets/fonts/Roboto-Regular.ttf") format("truetype");
-  }
+}
 
 body {
   background-image: url("/assets/images/arc.png");
   background-repeat: no-repeat;
   background-size: cover;
-  }
+}
 main,
 header {
   align-items: center;
   text-align: center;
-  }
+}
 
 h1,
 h2,
@@ -23,9 +23,9 @@ h3,
 p {
   font-family: "roboto", sans-serif;
   color: white;
-  }
+}
 
-button {
+.btn {
   padding: 12px 24px;
   border: 1px solid rgba(110, 110, 110, .4);
   border-radius: 10px;
@@ -37,13 +37,36 @@ button {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  }
+}
+
+.btn-trash {
+  border: 0px;
+  background: rgb( 0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.btn-trash img {
+  width: 25px;
+  height: auto;
+}
+
+.btn-trash:hover{
+  padding: 0;
+  border: 1px solid rgba(110, 110, 110, .4);
+  border-radius: 5px;
+  background: rgb( 0, 0, 0, .25);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
 
 .task-list {
   width: 20%;
   margin: 0 auto;
   padding: 0;
-  }
+}
 
 .task-card {
   margin: 10px;
@@ -56,4 +79,4 @@ button {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  }
+}

@@ -144,28 +144,5 @@
     "will-change",
 
     "--*"
-  ],
-
-  "always-semicolon": true,
-  "color-case": "lower",
-  "block-indent": "  ",
-  "color-shorthand": true,
-  "element-case": "lower",
-  "eof-newline": true,
-  "leading-zero": false,
-  "quotes": "double",
-  "remove-empty-rulesets": true,
-  "space-after-colon": " ",
-  "space-after-combinator": " ",
-  "space-after-opening-brace": "\n",
-  "space-after-selector-delimiter": "\n",
-  "space-before-colon": "",
-  "space-before-combinator": " ",
-  "space-before-opening-brace": " ",
-  "space-between-declarations": "\n",
-  "space-between-rules": "\n\n",
-  "strip-spaces": true,
-  "tab-size": false,
-  "unitless-zero": true,
-  "vendor-prefix-align": true
+  ]
 }
