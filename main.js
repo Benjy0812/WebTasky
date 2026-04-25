@@ -36,10 +36,10 @@ const taskCards = document.querySelector('.task-card')
 
 btnTrash.addEventListener('mouseenter', () => {
   taskCards.classList.add('background-red')
-  console.log('Hovering trash button', btnTrash, box)
+  console.log('Hovering trash button', btnTrash, taskCards)
 })
 
 btnTrash.addEventListener('mouseleave', () => {
   taskCards.classList.remove('background-red')
-  console.log('Not hovering trash button')
+  console.log('Not hovering trash button', btnTrash, taskCards)
 })

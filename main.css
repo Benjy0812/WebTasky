@@ -25,15 +25,15 @@ p {
   font-family: 'roboto', sans-serif;
 }
 
+li {
+  padding-left: 10px;
+  text-align: left;
+}
+
 .btn {
   cursor: pointer;
   border: 1px solid rgba(110, 110, 110, 0.4);
   border-radius: 10px;
-
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 12px 24px;
   color: white;
@@ -49,13 +49,7 @@ p {
   margin: 10px;
   border: 1px solid rgba(110, 110, 110, 0.4);
   border-radius: 12px;
-
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 0;
 }
 
 .btn-trash img {
