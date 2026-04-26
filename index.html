@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasky</title>
+    <script type="module" crossorigin src="/WebTasky/assets/index-B-hLwpe3.js"></script>
+    <link rel="stylesheet" crossorigin href="/WebTasky/assets/index-qiyLYQwT.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Tasky</h1>
+    </header>
+    <main>
+      <div class="controls">
+        <button id="add-task" class="btn" aria-label="Add new task">
+          Add New Task
+        </button>
+        <button id="remove-task" class="btn">Remove Task</button>
+      </div>
+      <ul id="task-box" class="task-list">
+        <!-- Tasks will be added here dynamically -->
+      </ul>
+    </main>
+
+    <dialog id="add-task-dialog">
+      <form id="add-task-form">
+        <h2>Add new task</h2>
+        <label for="task-title-input">Title:</label>
+        <input type="text" id="task-title-input" placeholder="Title" required />
+        <label for="task-description-input">Description:</label>
+        <textarea
+          id="task-description-input"
+          placeholder="Description"
+          required
+        ></textarea>
+        <label for="task-datetime-input">Time and Date:</label>
+        <input type="datetime-local" id="task-datetime-input" required />
+        <div class="dialog-actions">
+          <button type="submit" class="btn">Save</button>
+          <button type="button" id="cancel-task-btn" class="btn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+  </body>
+</html>
