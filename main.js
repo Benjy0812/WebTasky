@@ -1,22 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let tasks = []
   const addTaskButton = document.getElementById('add-task')
   const removeTaskButton = document.getElementById('remove-task')
   const taskBox = document.getElementById('task-box')
+  const taskDialog = document.getElementById('add-task-dialog')
+  const taskForm = document.getElementById('add-task-form')
+  const cancelTaskBtn = document.getElementById('cancel-task-btn')
 
   addTaskButton.addEventListener('click', () => {
-    const main = prompt('Enter title:')
-    const description = prompt('Enter description:')
-    const time = prompt('Enter the time and date (e.g., 12:24 / 01.01.2026):')
+    taskDialog.showModal()
+  })
 
-    if (main && description && time) {
+  cancelTaskBtn.addEventListener('click', () => {
+    taskDialog.close()
+  })
+
+  taskForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const title = document.getElementById('task-title').value
+    const description = document.getElementById('task-description').value
+    const datetime = document.getElementById('task-datetime').value
+
+    if (title && description && datetime) {
       const taskCard = document.createElement('li')
+      const taskId = tasks.length
+
       taskCard.className = 'task-card'
+      taskCard.setAttribute('data-task-id', taskId)
       taskCard.innerHTML = `
-                <h3>Main: ${main}</h3>
-                <p>Description: ${description}</p>
-                <p>Time and Date: <time class="due-date">${time}</time></p>
-            `
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <p>Time and Date: <time class="due-date" datetime="${datetime}">${new Date(datetime).toLocaleString()}</time></p>
+        <button class="btn-trash" aria-label="Delete task">
+          <img src="/assets/icons/trash.svg" alt="Trash">
+        </button>
+      `
       taskBox.appendChild(taskCard)
+
+      const btnTrash = taskCard.querySelector('.btn-trash')
+      btnTrash.addEventListener('click', () => {
+        console.log('Trash clicked!')
+        taskBox.removeChild(taskCard)
+      })
+
+      btnTrash.addEventListener('mouseenter', () => {
+        taskCard.classList.add('background-red')
+        console.log(taskCard)
+      })
+      btnTrash.addEventListener('mouseleave', () => {
+        taskCard.classList.remove('background-red')
+        console.log(taskCard)
+      })
+
+      tasks.push({ title, description, datetime })
+      taskForm.reset()
+      taskDialog.close()
     }
   })
 
@@ -29,17 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('No tasks to remove!')
     }
   })
-})
-
-const btnTrash = document.querySelector('.btn-trash')
-const taskCards = document.querySelector('.task-card')
-
-btnTrash.addEventListener('mouseenter', () => {
-  taskCards.classList.add('background-red')
-  console.log('Hovering trash button', btnTrash, taskCards)
-})
-
-btnTrash.addEventListener('mouseleave', () => {
-  taskCards.classList.remove('background-red')
-  console.log('Not hovering trash button', btnTrash, taskCards)
 })

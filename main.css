@@ -1,3 +1,17 @@
+:root {
+  --text-color: white;
+  --secondary-text-color: black;
+  --font-family: 'roboto', sans-serif;
+
+  --fallback-bg-color: rgb(18, 18, 18);
+
+  --btn-border: 1px solid rgba(110, 110, 110, 0.4);
+  --btn-bg-color: rgba(0, 0, 0, 0.2);
+
+  --card-border: 1px solid rgba(110, 110, 110, 0.4);
+  --card-bg-color: rgba(0, 0, 0, 0.2);
+}
+
 @font-face {
   font-style: normal;
   font-weight: normal;
@@ -10,6 +24,8 @@ body {
   background-image: url('/assets/images/arc.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--fallback-bg-color);
 }
 main,
 header {
@@ -21,8 +37,8 @@ h1,
 h2,
 h3,
 p {
-  color: white;
-  font-family: 'roboto', sans-serif;
+  color: var(--text-color);
+  font-family: var(--font-family);
 }
 
 li {
@@ -32,9 +48,9 @@ li {
 
 .btn {
   cursor: pointer;
-  border: 1px solid rgba(110, 110, 110, 0.4);
+  border: var(--btn-border);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--btn-bg-color);
   padding: 12px 24px;
   color: white;
 }
@@ -47,9 +63,9 @@ li {
 
 .task-card {
   margin: 10px;
-  border: 1px solid rgba(110, 110, 110, 0.4);
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.2);
+  border: var(--card-border);
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
 }
 
 .btn-trash img {
@@ -60,7 +76,32 @@ li {
 .btn-trash {
   cursor: pointer;
   border: 0px;
-  background: rgb(0, 0, 0, 0);
+  background: none;
+}
+
+dialog {
+  border: var(--card-border);
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+dialog button {
+  margin-top: 10px;
+}
+
+dialog input,
+dialog textarea {
+  color: var(--text-color);
+  margin-top: 10px;
+  border: var(--card-border);
+  border-radius: 5px;
+  background-color: var(--card-bg-color);
 }
 
 .background-red {
