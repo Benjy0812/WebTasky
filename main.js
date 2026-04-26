@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addTaskButton = document.getElementById('add-task')
   const removeTaskButton = document.getElementById('remove-task')
   const taskBox = document.getElementById('task-box')
+
   const taskDialog = document.getElementById('add-task-dialog')
   const taskForm = document.getElementById('add-task-form')
   const cancelTaskBtn = document.getElementById('cancel-task-btn')
@@ -17,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const title = document.getElementById('task-title').value
-    const description = document.getElementById('task-description').value
-    const datetime = document.getElementById('task-datetime').value
+    const title = document.getElementById('task-title-input').value
+    const description = document.getElementById('task-description-input').value
+    const datetime = document.getElementById('task-datetime-input').value
 
     if (title && description && datetime) {
       const taskCard = document.createElement('li')
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>${description}</p>
         <p>Time and Date: <time class="due-date" datetime="${datetime}">${new Date(datetime).toLocaleString()}</time></p>
         <button class="btn-trash" aria-label="Delete task">
-          <img src="/assets/icons/trash.svg" alt="Trash">
+          <img src="/public/assets/icons/trash.svg" alt="Trash">
         </button>
       `
       taskBox.appendChild(taskCard)
@@ -41,15 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btnTrash.addEventListener('click', () => {
         console.log('Trash clicked!')
         taskBox.removeChild(taskCard)
-      })
-
-      btnTrash.addEventListener('mouseenter', () => {
-        taskCard.classList.add('background-red')
-        console.log(taskCard)
-      })
-      btnTrash.addEventListener('mouseleave', () => {
-        taskCard.classList.remove('background-red')
-        console.log(taskCard)
       })
 
       tasks.push({ title, description, datetime })
