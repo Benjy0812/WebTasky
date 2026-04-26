@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let tasks = []
   const addTaskButton = document.getElementById('add-task')
   const removeTaskButton = document.getElementById('remove-task')
-  const taskBox = document.getElementById('task-box')
+  const tasksList = document.getElementById('tasks-list')
 
-  const taskDialog = document.getElementById('add-task-dialog')
-  const taskForm = document.getElementById('add-task-form')
+  const taskDialog = document.getElementById('task-dialog')
+  const taskForm = document.getElementById('task-form')
   const cancelTaskBtn = document.getElementById('cancel-task-btn')
 
   addTaskButton.addEventListener('click', () => {
@@ -18,35 +18,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const title = document.getElementById('task-title-input').value
-    const description = document.getElementById('task-description-input').value
-    const datetime = document.getElementById('task-datetime-input').value
+    const formData = new FormData(taskForm)
+    const title = formData.get("title")
+    const description = formData.get("description")
+    
+    if (title) {
+      // Create task card
+      const taskCard = document.createElement("li")
+      taskCard.classList.add("task-card")
+      
+      // Add task title
+      const taskTitle = document.createElement("h3")
+      taskTitle.textContent = title
+      taskCard.appendChild(taskTitle)
 
-    if (title && description && datetime) {
-      const taskCard = document.createElement('li')
-      const taskId = tasks.length
+      // Add description if provided
+      if (description) {
+        const taskDesc = document.createElement("p")
+        taskDesc.textContent = description
+        taskCard.appendChild(taskDesc)
+      }
 
-      taskCard.className = 'task-card'
-      taskCard.setAttribute('data-task-id', taskId)
-      taskCard.innerHTML = `
-        <h3>${title}</h3>
-        <p>${description}</p>
-        <p>Time and Date: <time class="due-date" datetime="${datetime}">${new Date(datetime).toLocaleString()}</time></p>
-        <button class="btn-trash" aria-label="Delete task">
-          <img src="/public/assets/icons/trash.svg" alt="Trash">
-        </button>
-      `
-      taskBox.appendChild(taskCard)
-
-      const btnTrash = taskCard.querySelector('.btn-trash')
-      btnTrash.addEventListener('click', () => {
-        console.log('Trash clicked!')
-        taskBox.removeChild(taskCard)
+      // Add delete button
+      const deleteBtn = document.createElement("button")
+      deleteBtn.classList.add("btn-trash")
+      deleteBtn.textContent = "delete"
+      deleteBtn.addEventListener("click", () => {
+        taskCard.remove()
       })
+      // Append task card to task box
+      taskCard.appendChild(deleteBtn)
 
-      tasks.push({ title, description, datetime })
+      // Append task card to task list
+      tasksList.appendChild(taskCard)
+
       taskForm.reset()
-      taskDialog.close()
     }
   })
 
