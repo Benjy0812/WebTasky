@@ -44,12 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const deleteBtn = document.createElement('button')
       deleteBtn.classList.add('btn-trash')
       const trashIcon = document.createElement('img')
-      trashIcon.src = '/public/assets/icons/trash.svg'
+      trashIcon.src = '/assets/icons/trash.svg'
       trashIcon.alt = 'Delete Task'
       deleteBtn.appendChild(trashIcon)
       deleteBtn.addEventListener('click', () => {
         taskCard.remove()
       })
+
       // Append task card to task box
       taskCard.appendChild(deleteBtn)
 
