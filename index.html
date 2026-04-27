@@ -26,15 +26,27 @@
       <form id="task-form">
         <h2>Add new task</h2>
         <label for="task-title-input">Title:</label>
-        <input type="text" id="task-title-input" placeholder="Title" required />
+        <input
+          type="text"
+          name="title"
+          id="task-title-input"
+          placeholder="Title"
+          required
+        />
         <label for="task-description-input">Description:</label>
         <textarea
+          name="description"
           id="task-description-input"
           placeholder="Description"
           required
         ></textarea>
         <label for="task-datetime-input">Time and Date:</label>
-        <input type="datetime-local" id="task-datetime-input" required />
+        <input
+          type="datetime-local"
+          name="datetime"
+          id="task-datetime-input"
+          required
+        />
         <div class="dialog-actions">
           <button type="submit" class="btn">Save</button>
           <button type="button" id="cancel-task-btn" class="btn">Cancel</button>

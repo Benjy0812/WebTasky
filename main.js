@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(taskForm)
     const title = formData.get('title')
     const description = formData.get('description')
+    const timeDate = formData.get('datetime')
 
     if (title) {
       // Create task card
@@ -42,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add delete button
       const deleteBtn = document.createElement('button')
       deleteBtn.classList.add('btn-trash')
-      deleteBtn.textContent = 'delete'
+      const trashIcon = document.createElement('img')
+      trashIcon.src = '/public/assets/icons/trash.svg'
+      trashIcon.alt = 'Delete Task'
+      deleteBtn.appendChild(trashIcon)
       deleteBtn.addEventListener('click', () => {
         taskCard.remove()
       })

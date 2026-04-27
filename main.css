@@ -68,15 +68,15 @@ li {
   background-color: var(--card-bg-color);
 }
 
-.btn-trash img {
-  width: 25px;
-  height: auto;
-}
-
 .btn-trash {
   cursor: pointer;
   border: 0px;
   background: none;
+}
+
+.btn-trash img {
+  width: 25px;
+  height: auto;
 }
 
 .task-card:has(.btn-trash:hover) {
