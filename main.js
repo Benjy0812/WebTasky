@@ -19,31 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const formData = new FormData(taskForm)
-    const title = formData.get("title")
-    const description = formData.get("description")
-    
+    const title = formData.get('title')
+    const description = formData.get('description')
+
     if (title) {
       // Create task card
-      const taskCard = document.createElement("li")
-      taskCard.classList.add("task-card")
-      
+      const taskCard = document.createElement('li')
+      taskCard.classList.add('task-card')
+
       // Add task title
-      const taskTitle = document.createElement("h3")
+      const taskTitle = document.createElement('h3')
       taskTitle.textContent = title
       taskCard.appendChild(taskTitle)
 
       // Add description if provided
       if (description) {
-        const taskDesc = document.createElement("p")
+        const taskDesc = document.createElement('p')
         taskDesc.textContent = description
         taskCard.appendChild(taskDesc)
       }
 
       // Add delete button
-      const deleteBtn = document.createElement("button")
-      deleteBtn.classList.add("btn-trash")
-      deleteBtn.textContent = "delete"
-      deleteBtn.addEventListener("click", () => {
+      const deleteBtn = document.createElement('button')
+      deleteBtn.classList.add('btn-trash')
+      deleteBtn.textContent = 'delete'
+      deleteBtn.addEventListener('click', () => {
         taskCard.remove()
       })
       // Append task card to task box
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Append task card to task list
       tasksList.appendChild(taskCard)
 
+      // When done reset form
       taskForm.reset()
     }
   })
