@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasky</title>
-    <script type="module" crossorigin src="/WebTasky/assets/index-B7X1ZQYH.js"></script>
-    <link rel="stylesheet" crossorigin href="/WebTasky/assets/index-zkE-r33N.css">
+    <script type="module" crossorigin src="/WebTasky/assets/index-S-s7vFWw.js"></script>
+    <link rel="stylesheet" crossorigin href="/WebTasky/assets/index-DbRW_i-S.css">
   </head>
   <body>
     <header>
@@ -18,24 +18,49 @@
         </button>
         <button id="remove-task" class="btn">Remove Task</button>
       </div>
-      <ul id="task-box" class="task-list">
+      <ul id="tasks-list" class="task-list">
         <!-- Tasks will be added here dynamically -->
+        <li class="task-card">
+          <h3>Main: Get milk</h3>
+          <p>description: Get milk at EuroSpar</p>
+          <p>
+            Time and Date:
+            <time class="due-date" datetime="2026-01-01T12:24"
+              >12:24 / 01.01.2026</time
+            >
+          </p>
+          <button id="delete-task" class="btn-trash btn-trash">
+            <img src="/WebTasky/assets/icons/trash.svg" alt="Trash" />
+          </button>
+        </li>
       </ul>
     </main>
 
-    <dialog id="add-task-dialog">
-      <form id="add-task-form">
+    <dialog id="task-dialog">
+      <form id="task-form">
         <h2>Add new task</h2>
         <label for="task-title-input">Title:</label>
-        <input type="text" id="task-title-input" placeholder="Title" required />
+        <input
+          type="text"
+          name="title"
+          id="task-title-input"
+          placeholder="Title"
+          required
+        />
         <label for="task-description-input">Description:</label>
         <textarea
+          name="description"
           id="task-description-input"
           placeholder="Description"
           required
         ></textarea>
         <label for="task-datetime-input">Time and Date:</label>
-        <input type="datetime-local" id="task-datetime-input" required />
+        <input
+          type="datetime-local"
+          name="datetime"
+          id="task-datetime-input"
+          required
+        />
         <div class="dialog-actions">
           <button type="submit" class="btn">Save</button>
           <button type="button" id="cancel-task-btn" class="btn">Cancel</button>
