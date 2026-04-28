@@ -2,27 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
   let tasks = []
   const addTaskButton = document.getElementById('add-task')
   const removeTaskButton = document.getElementById('remove-task')
-  const tasksList = document.getElementById('tasks-list')
-
+  
   const taskDialog = document.getElementById('task-dialog')
   const taskForm = document.getElementById('task-form')
   const cancelTaskBtn = document.getElementById('cancel-task-btn')
-
+  
   addTaskButton.addEventListener('click', () => {
     taskDialog.showModal()
   })
-
+  
   cancelTaskBtn.addEventListener('click', () => {
     taskDialog.close()
   })
-
+  
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const formData = new FormData(taskForm)
     const title = formData.get('title')
     const description = formData.get('description')
     const timeDate = formData.get('datetime')
-
+    
     if (title) {
       // Create task card
       const taskCard = document.createElement('li')
@@ -32,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const taskTitle = document.createElement('h3')
       taskTitle.textContent = title
       taskCard.appendChild(taskTitle)
-
+      
       // Add description if provided
       if (description) {
         const taskDesc = document.createElement('p')
         taskDesc.textContent = description
         taskCard.appendChild(taskDesc)
       }
-
+      
       // Add delete button
       const deleteBtn = document.createElement('button')
       deleteBtn.classList.add('btn-trash')
@@ -50,13 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
       deleteBtn.addEventListener('click', () => {
         taskCard.remove()
       })
-
+      
       // Append task card to task box
       taskCard.appendChild(deleteBtn)
-
+      
       // Append task card to task list
+      const tasksList = document.getElementById('tasks-list')
       tasksList.appendChild(taskCard)
-
+      
       // When done reset form
       taskForm.reset()
     }
