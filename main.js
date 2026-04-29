@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let tasks = []
   const addTaskButton = document.getElementById('addTaskBtn')
   const removeTaskButton = document.getElementById('removeTaskBtn')
+  const tasksContainer = document.getElementById('tasksContainer')
 
   const taskModal = document.getElementById('taskModal')
   const taskForm = document.getElementById('taskForm')
@@ -13,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cancelTaskBtn.addEventListener('click', () => {
     taskModal.close()
+  })
+
+  tasksContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-button')) {
+      const taskCard = e.target.closest('.task-item')
+      if (taskCard) {
+        taskCard.remove()
+      }
+    }
   })
 
   taskForm.addEventListener('submit', (e) => {
@@ -45,15 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const deleteBtn = document.createElement('button')
       deleteBtn.classList.add('delete-button')
       deleteBtn.textContent = 'Remove'
-      deleteBtn.addEventListener('click', () => {
-        taskCard.remove()
-      })
       taskCard.appendChild(deleteBtn)
 
-      const tasksContainer = document.getElementById('tasksContainer')
       tasksContainer.appendChild(taskCard)
 
       taskForm.reset()
+      taskModal.close()
     }
   })
 
