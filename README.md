@@ -73,10 +73,24 @@ bun run build
 └── vite.config.js   # Vite configuration
 ```
 
-## Philosophy
+## Philosophy & Learning
 
-WebTasky was built as a demonstration of "Back to Basics" web development. By leveraging native browser APIs like <dialog> and FormData, it achieves a modern user experience with zero external runtime dependencies.
+WebTasky was built as a hands-on journey into the core of web development. By intentionally avoiding frameworks, this project served as a deep dive into how the web actually works. 
+
+### What I Learned:
+- **DOM Mastery:** Learning how to dynamically create, manipulate, and remove elements without a virtual DOM.
+- **Native Browser APIs:** Leveraging powerful built-in features like the `<dialog>` element for modals and the `FormData` API for clean input handling.
+- **Event-Driven Architecture:** Implementing efficient event delegation by listening for clicks on parent containers rather than individual elements.
+- **State vs. UI:** Understanding the fundamental loop of how data changes should reflect in the user interface.
+
+This project proves that you don't need 100kb of libraries to build a responsive, functional, and modern application. It's about mastering the basics to build a stronger foundation for the future.
 
 ---
 
 *Made with care by Benjy*
+
+---
+
+### Deep Dive
+
+Check out the [Logic Explained](./MAIN_JS_EXPLAINED.md) guide for a line-by-line breakdown of how the application works!
