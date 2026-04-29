@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasky</title>
-    <script type="module" crossorigin src="/WebTasky/assets/index-B7X1ZQYH.js"></script>
-    <link rel="stylesheet" crossorigin href="/WebTasky/assets/index-zkE-r33N.css">
+    <script type="module" crossorigin src="/assets/index-BgjyeP1G.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-e_y7yRDx.css">
   </head>
   <body>
     <header>
@@ -13,32 +13,60 @@
     </header>
     <main>
       <div class="controls">
-        <button id="add-task" class="btn" aria-label="Add new task">
+        <button id="addTaskBtn" class="button" aria-label="Add new task">
           Add New Task
         </button>
-        <button id="remove-task" class="btn">Remove Task</button>
+        <button id="removeTaskBtn" class="button">Remove Task</button>
       </div>
-      <ul id="task-box" class="task-list">
+      <ul id="tasksContainer" class="task-container">
         <!-- Tasks will be added here dynamically -->
+        <li class="task-item">
+          <h3>Main: Get milk</h3>
+          <p>description: Get milk at EuroSpar</p>
+          <p>
+            Time and Date:
+            <time class="due-date" datetime="2026-01-01T12:24"
+              >12:24 / 01.01.2026</time
+            >
+          </p>
+          <button id="deleteTaskBtn" class="delete-button">Remove</button>
+        </li>
       </ul>
     </main>
 
-    <dialog id="add-task-dialog">
-      <form id="add-task-form">
+    <dialog id="taskModal" class="modal">
+      <form id="taskForm">
         <h2>Add new task</h2>
-        <label for="task-title-input">Title:</label>
-        <input type="text" id="task-title-input" placeholder="Title" required />
-        <label for="task-description-input">Description:</label>
+        <label for="taskTitleInput">Title:</label>
+        <input
+          type="text"
+          name="title"
+          id="taskTitleInput"
+          placeholder="Title"
+          required
+          class="modal-input"
+        />
+        <label for="taskDescriptionInput">Description:</label>
         <textarea
-          id="task-description-input"
+          name="description"
+          id="taskDescriptionInput"
           placeholder="Description"
           required
+          class="modal-input"
         ></textarea>
-        <label for="task-datetime-input">Time and Date:</label>
-        <input type="datetime-local" id="task-datetime-input" required />
+        <label for="taskDatetimeInput">Time and Date:</label>
+        <input
+          type="datetime-local"
+          name="datetime"
+          id="taskDatetimeInput"
+          required
+          class="modal-input"
+        />
         <div class="dialog-actions">
-          <button type="submit" class="btn">Save</button>
-          <button type="button" id="cancel-task-btn" class="btn">Cancel</button>
+          <button type="submit" class="modal-button">Save</button>
+          <button type="button" id="cancelTaskBtn" class="modal-button">
+            Cancel
+          </button>
         </div>
       </form>
     </dialog>
