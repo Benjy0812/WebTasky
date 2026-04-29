@@ -1,10 +1,10 @@
-# 🧠 WebTasky Logic Explained (`main.js`)
+# WebTasky Logic Explained (`main.js`)
 
 This document provides a line-by-line breakdown of the application logic found in `main.js`.
 
 ---
 
-## 🏗️ The Wrapper
+## The Wrapper
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
 ```
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## 📦 State and Selections
+## State and Selections
 ```javascript
   let tasks = []
 ```
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## 🔘 Modal Controls
+## Modal Controls
 ```javascript
   addTaskButton.addEventListener('click', () => {
     taskModal.showModal()
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## 🗑️ Deleting Individual Tasks (Event Delegation)
+## Deleting Individual Tasks (Event Delegation)
 ```javascript
   tasksContainer.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-button')) {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## ➕ Creating and Adding Tasks
+## Creating and Adding Tasks
 ```javascript
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-## 🧹 Bulk Removal
+## Bulk Removal
 ```javascript
   removeTaskButton.addEventListener('click', () => {
     const taskItems = document.querySelectorAll('.task-item')
