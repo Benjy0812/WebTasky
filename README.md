@@ -32,6 +32,7 @@ Ensure you have [Bun](https://bun.sh/) installed on your machine.
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/benjy0812/WebTasky.git
    cd WebTasky
@@ -45,10 +46,13 @@ Ensure you have [Bun](https://bun.sh/) installed on your machine.
 ### Development
 
 Run the local development server:
+
 ```bash
 bun dev
 ```
+
 To automatically open in your browser:
+
 ```bash
 bun dev:open
 ```
@@ -56,6 +60,7 @@ bun dev:open
 ### Production Build
 
 Create an optimized build for deployment:
+
 ```bash
 bun run build
 ```
@@ -75,9 +80,10 @@ bun run build
 
 ## Philosophy & Learning
 
-WebTasky was built as a hands-on journey into the core of web development. By intentionally avoiding frameworks, this project served as a deep dive into how the web actually works. 
+WebTasky was built as a hands-on journey into the core of web development. By intentionally avoiding frameworks, this project served as a deep dive into how the web actually works.
 
 ### What I Learned:
+
 - **DOM Mastery:** Learning how to dynamically create, manipulate, and remove elements without a virtual DOM.
 - **Native Browser APIs:** Leveraging powerful built-in features like the `<dialog>` element for modals and the `FormData` API for clean input handling.
 - **Event-Driven Architecture:** Implementing efficient event delegation by listening for clicks on parent containers rather than individual elements.
@@ -87,7 +93,7 @@ This project proves that you don't need 100kb of libraries to build a responsive
 
 ---
 
-*Made with care by Benjy*
+_Made with care by Benjy_
 
 ---
 
